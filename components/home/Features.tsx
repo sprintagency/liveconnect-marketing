@@ -58,10 +58,10 @@ export default function Features() {
               <div className="flex h-[50px] w-[50px] items-center justify-center rounded-[13px] bg-teal/10 text-teal">
                 {f.icon}
               </div>
-              <h3 className="mb-[10px] mt-[18px] font-display text-[19px] font-normal leading-[1.2] text-ink-text">
+              <h3 className="mb-[14px] mt-[18px] font-display text-[19px] font-normal leading-[1.2] text-ink-text">
                 {f.title}
               </h3>
-              <p className="text-[15px] leading-[1.5] text-body">{f.body}</p>
+              <p className="text-[15px] leading-[1.4] text-body">{f.body}</p>
             </div>
           ))}
         </div>

@@ -9,7 +9,7 @@ export default function CtaBand() {
           <h2 className="font-display text-[34px] font-normal tracking-[-1px] text-cream md:text-[46px]">
             Ready to meet the room?
           </h2>
-          <p className="mx-auto mt-4 max-w-[520px] text-[17px] leading-[1.5] text-white/92 md:text-[18px]">
+          <p className="mx-auto mt-6 max-w-[520px] text-[17px] leading-[1.4] text-white/92 md:text-[18px]">
             Create your profile in under a minute, then pull it up at your next
             event.
           </p>

@@ -49,7 +49,7 @@ export default function ContactPage() {
           <h1 className="mt-[14px] font-display text-[32px] font-normal leading-[1.14] tracking-[-1px] md:text-[40px]">
             Let&apos;s bring LiveConnect to your events.
           </h1>
-          <p className="mt-5 text-[17px] leading-[1.5] text-on-dark">
+          <p className="mt-5 text-[17px] leading-[1.4] text-on-dark">
             Tell us about your organization and the events you run. Our team will
             get you set up with a white label room of your own, usually within a
             few days.

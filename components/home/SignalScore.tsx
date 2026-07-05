@@ -29,10 +29,10 @@ export default function SignalScore() {
             <span className="font-bold">Score</span>
             <sup className="ml-px align-super text-[11px] font-bold">™</sup>
           </div>
-          <h2 className="mt-5 font-display text-[32px] font-normal tracking-[-1px] text-cream md:text-[44px]">
+          <h2 className="mt-7 font-display text-[32px] font-normal tracking-[-1px] text-cream md:text-[44px]">
             Did the room actually connect?
           </h2>
-          <p className="mt-[18px] text-[18px] leading-[1.5] text-on-dark">
+          <p className="mt-6 text-[18px] leading-[1.4] text-on-dark">
             SignalScore™ turns a night of networking into one explainable 0–100
             number, for the whole event, and privately for each attendee. It
             rewards mutual, relevant, followed-through introductions over raw
@@ -42,7 +42,7 @@ export default function SignalScore() {
             {POINTS.map((p) => (
               <div key={p.title} className="flex items-center gap-3">
                 <CheckCircle size={21} className="flex-none text-teal" />
-                <span className="text-[15.5px] leading-[1.5] text-light-dark-2">
+                <span className="text-[15.5px] leading-[1.4] text-light-dark-2">
                   <strong className="font-bold text-cream">{p.title}</strong>
                   {p.rest}
                 </span>
@@ -115,7 +115,7 @@ export default function SignalScore() {
             </div>
           ))}
 
-          <div className="mt-[22px] text-[11.5px] leading-[1.5] text-[#78725f]">
+          <div className="mt-[22px] text-[11.5px] leading-[1.4] text-[#78725f]">
             Personal SignalScore is shown privately to each attendee, never as a
             public ranking.
           </div>

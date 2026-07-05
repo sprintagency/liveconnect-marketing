@@ -9,8 +9,8 @@ const CHECKS = [
 ];
 
 const DIR_ROWS = [
-  { face: "face-6", name: "Marcus Bell", role: "Sales Director · Ellison Health" },
-  { face: "face-7", name: "Priya Nair", role: "Operations · Ridgeway Freight" },
+  { face: "face-6", name: "Marcus Bell", role: "Sales · Ellison Health" },
+  { face: "face-7", name: "Priya Nair", role: "Ops · Ridgeway Freight" },
 ];
 
 export default function Organizers() {
@@ -25,7 +25,7 @@ export default function Organizers() {
           <h2 className="mt-[14px] font-display text-[32px] font-normal tracking-[-1px] text-ink-text md:text-[42px]">
             Run it under your own brand
           </h2>
-          <p className="mt-[18px] text-[18px] leading-[1.5] text-body">
+          <p className="mt-6 text-[18px] leading-[1.4] text-body">
             Live Connect is fully white label. Your logo, your colors, your
             event, powered by the same live directory attendees already love.
           </p>
@@ -49,8 +49,7 @@ export default function Organizers() {
         {/* Phone mock */}
         <div className="flex justify-center">
           <div className="w-[320px] rounded-[40px] border border-border bg-charcoal-3 p-3 shadow-[0_40px_80px_rgba(13,36,68,0.28)]">
-            <div className="overflow-hidden rounded-[30px] bg-charcoal-3 pt-3">
-              <div className="rounded-t-[24px] bg-[#f3f6fb] p-[18px]">
+            <div className="overflow-hidden rounded-[28px] bg-[#f3f6fb] p-[18px]">
                 <div className="rounded-[16px] border border-border bg-cream p-4">
                   <div className="flex items-center gap-2 text-[14px] font-extrabold text-ink-text">
                     <CheckCircle size={18} className="text-[#37b866]" strokeWidth={2.2} />
@@ -68,11 +67,11 @@ export default function Organizers() {
                   {DIR_ROWS.map((r) => (
                     <div key={r.name} className="flex items-center gap-[11px] rounded-[14px] border border-border bg-cream p-[11px]">
                       <Image src={`/assets/${r.face}.png`} alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover" />
-                      <div className="flex-1 leading-[1.25]">
-                        <div className="text-[13.5px] font-extrabold text-ink-text">
+                      <div className="min-w-0 flex-1 leading-[1.25]">
+                        <div className="truncate text-[13.5px] font-extrabold text-ink-text">
                           {r.name}
                         </div>
-                        <div className="text-[11.5px] text-[#827c70]">{r.role}</div>
+                        <div className="truncate text-[11.5px] text-[#827c70]">{r.role}</div>
                       </div>
                       <span className="inline-flex items-center justify-center rounded-[8px] bg-teal px-[13px] py-[6px] text-[11px] font-bold leading-none text-ink">
                         Connect
@@ -84,7 +83,6 @@ export default function Organizers() {
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 }

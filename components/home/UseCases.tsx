@@ -38,7 +38,7 @@ export default function UseCases() {
           <h2 className="mt-[14px] font-display text-[32px] font-normal tracking-[-1px] md:text-[44px]">
             Built for every kind of room
           </h2>
-          <p className="mt-4 text-[17px] leading-[1.5] text-on-dark-2 md:text-[18px]">
+          <p className="mt-6 text-[17px] leading-[1.4] text-on-dark-2 md:text-[18px]">
             Wherever people gather to do business, Live Connect makes the room
             searchable.
           </p>
@@ -68,7 +68,7 @@ export default function UseCases() {
                 <h3 className="font-display text-[24px] font-normal leading-[1.15]">
                   {c.title}
                 </h3>
-                <p className="mt-[11px] text-[15px] leading-[1.5] text-light-dark">
+                <p className="mt-[14px] text-[15px] leading-[1.4] text-light-dark">
                   {c.body}
                 </p>
               </div>

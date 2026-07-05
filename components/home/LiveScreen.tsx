@@ -26,7 +26,7 @@ export default function LiveScreen() {
           <h2 className="mt-[14px] font-display text-[32px] font-normal tracking-[-1px] text-ink-text md:text-[44px]">
             Own the room&apos;s attention
           </h2>
-          <p className="mx-auto mt-4 max-w-[600px] text-[17px] leading-[1.5] text-body md:text-[18px]">
+          <p className="mx-auto mt-6 max-w-[600px] text-[17px] leading-[1.4] text-body md:text-[18px]">
             When it counts, organizers take over every phone in the room in real
             time, spotlight the speaker, or invite the whole room to join.
           </p>
@@ -90,7 +90,7 @@ export default function LiveScreen() {
               <div className="font-display text-[21px] font-semibold text-cream">
                 Join the room
               </div>
-              <div className="mt-2 max-w-[230px] text-[13px] leading-[1.5] text-on-dark">
+              <div className="mt-2 max-w-[230px] text-[13px] leading-[1.4] text-on-dark">
                 Members only mixers and summits, all year round.
               </div>
               <div className="mt-[18px] inline-flex items-center justify-center rounded-[12px] bg-teal px-[26px] py-[11px] text-[14px] font-bold leading-none text-ink shadow-[0_10px_22px_rgba(8,200,136,0.4)]">
@@ -117,7 +117,7 @@ export default function LiveScreen() {
                 <div className="font-display text-[16px] font-bold leading-[1.2] text-ink-text">
                   {m.title}
                 </div>
-                <div className="mt-[7px] text-[13.5px] leading-[1.5] text-body">
+                <div className="mt-3 text-[13.5px] leading-[1.4] text-body">
                   {m.body}
                 </div>
               </div>

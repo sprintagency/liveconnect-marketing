@@ -38,7 +38,7 @@ export default function Hero() {
             <span className="text-teal">Not just a name tag.</span>
           </h1>
 
-          <p className="mt-[26px] max-w-[490px] text-[17px] leading-[1.5] text-on-dark-2 md:text-[19px]">
+          <p className="mt-[26px] max-w-[490px] text-[17px] leading-[1.4] text-on-dark-2 md:text-[19px]">
             Live Connect turns every event into an open door. See exactly who&apos;s
             in the room, find the people who matter, and connect or save their
             details in a single tap.

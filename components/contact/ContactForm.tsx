@@ -53,7 +53,7 @@ export default function ContactForm() {
           <div className="font-display text-[18px] font-normal text-ink-text">
             Thanks, your message is on its way
           </div>
-          <p className="mt-2 text-[14px] leading-[1.5] text-body">
+          <p className="mt-2 text-[14px] leading-[1.4] text-body">
             Our team will get back to you within one business day. If you need
             us sooner, email us directly at{" "}
             <a
@@ -123,7 +123,7 @@ export default function ContactForm() {
         {status === "submitting" ? "Sending…" : "Send to our team"}
         {status !== "submitting" && <ArrowRight />}
       </button>
-      <p className="mt-1.5 text-[12.5px] leading-[1.5] text-muted-2">
+      <p className="mt-1.5 text-[12.5px] leading-[1.4] text-muted-2">
         You&apos;ll hear back within 24 hours from a LiveConnect representative.
       </p>
     </form>

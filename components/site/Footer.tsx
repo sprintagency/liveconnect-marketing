@@ -28,7 +28,7 @@ export default function Footer() {
               height={28}
               style={{ height: 28, width: "auto" }}
             />
-            <p className="mt-4 text-[14.5px] leading-[1.5]">
+            <p className="mt-4 text-[14.5px] leading-[1.4]">
               The live networking app that turns every event into an open room.
               Build connections. Meet the room.
             </p>
