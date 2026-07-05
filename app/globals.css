@@ -32,7 +32,7 @@
   --color-teal-dark: #05a870;
   --color-live: #37d67a;
 
-  --font-display: "Nexa", var(--font-montserrat), "Montserrat", sans-serif;
+  --font-display: "nexa", var(--font-montserrat), "Montserrat", sans-serif;
   --font-body: var(--font-montserrat), "Montserrat", sans-serif;
 }
 

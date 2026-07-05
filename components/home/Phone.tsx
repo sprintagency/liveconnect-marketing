@@ -4,7 +4,7 @@ import Image from "next/image";
 const TEAL = "#08c888";
 const NAVY = "#1a1912";
 const INK = "#14130d";
-const DISP = "Nexa, var(--font-montserrat), Montserrat, sans-serif";
+const DISP = "nexa, var(--font-montserrat), Montserrat, sans-serif";
 const MONO = "var(--font-montserrat), Montserrat, sans-serif";
 
 type Dir = "right" | "up" | "scale";

@@ -35,8 +35,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={montserrat.variable}>
       <head>
-        <link rel="preconnect" href="https://fonts.cdnfonts.com" />
-        <link href="https://fonts.cdnfonts.com/css/nexa" rel="stylesheet" />
+        <link rel="preconnect" href="https://use.typekit.net" />
+        <link rel="preconnect" href="https://p.typekit.net" />
+        <link rel="stylesheet" href="https://use.typekit.net/own8wil.css" />
       </head>
       <body>{children}</body>
     </html>

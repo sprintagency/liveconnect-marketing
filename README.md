@@ -9,7 +9,7 @@ auth, no shared deployment. Built from the design handoff in
 
 - Next.js 16 (App Router) + React 19 + TypeScript
 - Tailwind CSS v4 (design tokens in `app/globals.css`)
-- Fonts: Montserrat (`next/font`), Nexa (loaded via cdnfonts — see note below)
+- Fonts: Montserrat (`next/font`), Nexa (licensed, via Adobe Fonts / Typekit)
 - Resend for the contact form email
 
 ## Pages
@@ -48,10 +48,10 @@ touch the app or its database.
 
 ## Notes / TODO before production
 
-- **Nexa is a commercial font.** It's currently loaded from cdnfonts for the
-  prototype. For production, self-host the licensed `woff2` with `@font-face`
-  metric overrides (`ascent-override` etc.) per the handoff, and update the
-  `<link>` in `app/layout.tsx`.
+- **Nexa** is served (licensed) via Adobe Fonts / Typekit — kit
+  `https://use.typekit.net/own8wil.css`, family `"nexa"` (weights 400/700),
+  linked in `app/layout.tsx`. Vertical centering is handled systemically with
+  `text-box-trim` in `globals.css` (no per-element padding hacks).
 - **Contact form** returns HTTP 503 until `RESEND_API_KEY` is set; the form then
   shows a `mailto:` fallback. Verify the `CONTACT_FROM` domain in Resend.
 - Directory names/companies are placeholder sample data (`lib/people.ts`).
