@@ -72,7 +72,7 @@ export default function HowItWorks() {
         <h2 className="mt-[14px] font-display text-[32px] font-normal tracking-[-1px] text-ink-text md:text-[44px]">
           From walking in to following up
         </h2>
-        <p className="mx-auto mt-4 max-w-[560px] text-[17px] leading-[1.55] text-body md:text-[18px]">
+        <p className="mx-auto mt-4 max-w-[560px] text-[17px] leading-[1.5] text-body md:text-[18px]">
           Keep scrolling, watch the whole thing happen on one screen, one tap
           from the door to the follow up.
         </p>
@@ -100,7 +100,7 @@ export default function HowItWorks() {
               <h3 className="mt-6 font-display text-[38px] font-normal tracking-[-0.5px] text-ink-text">
                 {s.title}
               </h3>
-              <p className="mt-4 text-[18px] leading-[1.6] text-body">
+              <p className="mt-5 text-[18px] leading-[1.5] text-body">
                 {s.body}
               </p>
             </div>
@@ -146,7 +146,7 @@ export default function HowItWorks() {
             <h3 className="mt-4 font-display text-[22px] font-normal tracking-[-0.5px] text-ink-text">
               {s.title}
             </h3>
-            <p className="mt-2 text-[16px] leading-[1.6] text-body">{s.body}</p>
+            <p className="mt-[10px] text-[16px] leading-[1.5] text-body">{s.body}</p>
           </div>
         ))}
       </div>

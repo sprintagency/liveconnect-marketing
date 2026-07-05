@@ -5,7 +5,7 @@ function Group() {
     <div className="flex flex-none items-center" aria-hidden="false">
       {eventTypes.map((t, i) => (
         <span key={t + i} className="flex flex-none items-center">
-          <span className="whitespace-nowrap px-[22px] text-[19px] font-bold tracking-[-0.3px] text-light-dark">
+          <span className="no-trim whitespace-nowrap px-[22px] text-[19px] font-bold tracking-[-0.3px] text-light-dark">
             {t}
           </span>
           <span className="mb-[3px] h-[5px] w-[5px] flex-none rounded-full bg-teal" />

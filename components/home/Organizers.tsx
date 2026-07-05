@@ -25,11 +25,9 @@ export default function Organizers() {
           <h2 className="mt-[14px] font-display text-[32px] font-normal tracking-[-1px] text-ink-text md:text-[42px]">
             Run it under your own brand
           </h2>
-          <p className="mt-[18px] text-[18px] leading-[1.6] text-body">
+          <p className="mt-[18px] text-[18px] leading-[1.5] text-body">
             Live Connect is fully white label. Your logo, your colors, your
-            event, powered by the same live directory attendees already love.{" "}
-            <strong className="text-ink-text">Access Fort Worth</strong> is just
-            one room we power.
+            event, powered by the same live directory attendees already love.
           </p>
           <div className="mt-7 flex flex-col gap-4">
             {CHECKS.map((c) => (
@@ -51,19 +49,7 @@ export default function Organizers() {
         {/* Phone mock */}
         <div className="flex justify-center">
           <div className="w-[320px] rounded-[40px] border border-border bg-charcoal-3 p-3 shadow-[0_40px_80px_rgba(13,36,68,0.28)]">
-            <div className="overflow-hidden rounded-[30px] bg-charcoal-3">
-              <div className="flex items-center justify-between px-[18px] pb-4 pt-5">
-                <div className="flex items-center gap-2">
-                  <span className="h-[11px] w-[11px] rounded-full bg-teal" />
-                  <span className="text-[15px] font-extrabold text-cream">
-                    Access <span className="text-teal">Fort Worth</span>
-                  </span>
-                </div>
-                <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.5px] text-on-dark">
-                  <span className="h-[7px] w-[7px] rounded-full bg-live" />
-                  Live
-                </span>
-              </div>
+            <div className="overflow-hidden rounded-[30px] bg-charcoal-3 pt-3">
               <div className="rounded-t-[24px] bg-[#f3f6fb] p-[18px]">
                 <div className="rounded-[16px] border border-border bg-cream p-4">
                   <div className="flex items-center gap-2 text-[14px] font-extrabold text-ink-text">

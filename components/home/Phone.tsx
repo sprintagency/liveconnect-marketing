@@ -136,7 +136,7 @@ function Row({
 
 function Chip({ label, on }: { label: string; on: boolean }) {
   return (
-    <span style={{ fontSize: 11, fontWeight: 700, color: on ? INK : "#cec7b8", background: on ? TEAL : "rgba(255,255,255,.08)", border: on ? "none" : "1px solid rgba(255,255,255,.16)", padding: "6px 13px", borderRadius: 999, fontFamily: MONO }}>{label}</span>
+    <span style={{ display: "inline-flex", alignItems: "center", lineHeight: 1, fontSize: 11, fontWeight: 700, color: on ? INK : "#cec7b8", background: on ? TEAL : "rgba(255,255,255,.08)", border: on ? "1px solid transparent" : "1px solid rgba(255,255,255,.16)", padding: "7px 13px", borderRadius: 999, fontFamily: MONO }}>{label}</span>
   );
 }
 
@@ -162,7 +162,7 @@ export default function Phone({ active }: { active: number }) {
               <span style={{ width: 9, height: 9, borderRadius: "50%", background: "#37d67a", flex: "none" }} />
               <div style={{ lineHeight: 1.25 }}>
                 <div style={{ color: "#f4f0e8", fontWeight: 700, fontSize: 15, fontFamily: DISP }}>238 in the room</div>
-                <div style={{ color: "#aaa497", fontSize: 11.5, fontFamily: MONO }}>Access Fort Worth · Live</div>
+                <div style={{ color: "#aaa497", fontSize: 11.5, fontFamily: MONO }}>You&rsquo;re checked in · Live</div>
               </div>
             </>
           ))}
@@ -174,7 +174,7 @@ export default function Phone({ active }: { active: number }) {
               <span style={{ color: NAVY, fontSize: 14, fontWeight: 600, fontFamily: MONO }}>Marketing</span>
             </>
           ))}
-          {card(1, active, 1, "right", { top: 66, left: 16, right: 16, height: 30, display: "flex", gap: 8 }, (
+          {card(1, active, 1, "right", { top: 66, left: 16, right: 16, height: 30, display: "flex", alignItems: "center", gap: 8 }, (
             <>
               <Chip label="Marketing" on />
               <Chip label="Finance" on={false} />

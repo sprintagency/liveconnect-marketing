@@ -1,10 +1,10 @@
 import { CheckCircle } from "@/components/icons";
 
 const POINTS = [
-  { title: "Quality over volume", rest: ", a few mutual, relevant intros beat fifty one sided saves." },
-  { title: "Always explained", rest: ", five sub scores show exactly why the room scored what it did." },
-  { title: "Comparable event to event", rest: ", watch your community's number climb over time." },
-  { title: "Private by design", rest: ", attendees see only their own score. No leaderboards." },
+  { title: "Quality over volume", rest: ", real intros beat empty saves." },
+  { title: "Always explained", rest: ", five sub scores show why." },
+  { title: "Comparable event to event", rest: ", track it over time." },
+  { title: "Private by design", rest: ", only you ever see it." },
 ];
 
 const BARS = [
@@ -32,7 +32,7 @@ export default function SignalScore() {
           <h2 className="mt-5 font-display text-[32px] font-normal tracking-[-1px] text-cream md:text-[44px]">
             Did the room actually connect?
           </h2>
-          <p className="mt-[18px] text-[18px] leading-[1.6] text-on-dark">
+          <p className="mt-[18px] text-[18px] leading-[1.5] text-on-dark">
             SignalScore™ turns a night of networking into one explainable 0–100
             number, for the whole event, and privately for each attendee. It
             rewards mutual, relevant, followed-through introductions over raw
@@ -40,8 +40,8 @@ export default function SignalScore() {
           </p>
           <div className="mt-[30px] flex flex-col gap-[15px]">
             {POINTS.map((p) => (
-              <div key={p.title} className="flex items-start gap-3">
-                <CheckCircle size={21} className="mt-0.5 flex-none text-teal" />
+              <div key={p.title} className="flex items-center gap-3">
+                <CheckCircle size={21} className="flex-none text-teal" />
                 <span className="text-[15.5px] leading-[1.5] text-light-dark-2">
                   <strong className="font-bold text-cream">{p.title}</strong>
                   {p.rest}

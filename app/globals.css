@@ -51,6 +51,10 @@
   h3,
   h4 {
     text-wrap: balance;
+    /* Display type is set tight by default; loose 1.5 leading looked
+       undesigned when headings wrapped. Explicit leading-* utilities
+       still win where a component needs something different. */
+    line-height: 1.08;
   }
   p,
   li {
@@ -101,6 +105,13 @@
   .font-display {
     text-box-trim: trim-both;
     text-box-edge: cap alphabetic;
+  }
+  /* Opt out where the box is clipped: trimming to the alphabetic baseline
+     pushes descenders (y, g, p) outside the box, so any overflow-hidden
+     ancestor crops them. Applies to the marquee and single-line truncation. */
+  .no-trim,
+  .truncate {
+    text-box-trim: none;
   }
 }
 
@@ -153,12 +164,42 @@
     transform: translateX(-50%);
   }
 }
+@keyframes lcLiveGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px rgba(8, 200, 136, 0.55),
+      0 0 14px 0 rgba(8, 200, 136, 0.35);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(8, 200, 136, 0.9),
+      0 0 26px 4px rgba(8, 200, 136, 0.6);
+  }
+}
+@keyframes lcLiveDot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(55, 214, 122, 0.55);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 10px 2px rgba(55, 214, 122, 0.9);
+    opacity: 0.85;
+  }
+}
 
 .anim-float {
   animation: lcfloat 6s ease-in-out infinite;
 }
 .anim-pulse {
   animation: lcpulse 2s ease-out infinite;
+}
+.live-chip {
+  animation: lcLiveGlow 2.6s ease-in-out infinite;
+}
+.live-chip-dot {
+  animation: lcLiveDot 2.6s ease-in-out infinite;
 }
 .marquee-track {
   animation: lcMarqueeX 42s linear infinite;
@@ -213,6 +254,8 @@
 @media (prefers-reduced-motion: reduce) {
   .anim-float,
   .anim-pulse,
+  .live-chip,
+  .live-chip-dot,
   .marquee-track,
   .wall-col-a,
   .wall-col-b,

@@ -25,6 +25,12 @@ export const metadata: Metadata = {
     siteName: "LiveConnect",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "LiveConnect — Meet the room. Not just a name tag.",
+    description:
+      "The live networking app that turns every event into an open room.",
+  },
 };
 
 export default function RootLayout({

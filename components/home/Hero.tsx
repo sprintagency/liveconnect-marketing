@@ -32,18 +32,13 @@ export default function Hero() {
       <div className="relative mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-14 px-5 pb-16 pt-16 md:px-7 md:pb-24 md:pt-[88px] lg:grid-cols-[1.05fr_0.95fr]">
         {/* Copy column */}
         <div>
-          <div className="inline-flex items-center gap-[9px] rounded-full border border-teal/35 bg-teal/15 px-[15px] py-[8px] text-[12.5px] font-bold leading-none tracking-[2px] text-teal">
-            <span className="inline-block h-[7px] w-[7px] rounded-full bg-teal" />
-            LIVE NETWORKING · ANYWHERE
-          </div>
-
-          <h1 className="mt-[22px] font-display text-[40px] font-normal leading-[1.04] tracking-[-1px] md:text-[60px] md:tracking-[-1.5px]">
+          <h1 className="font-display text-[40px] font-normal leading-[1.04] tracking-[-1px] md:text-[60px] md:tracking-[-1.5px]">
             Meet the room.
             <br />
             <span className="text-teal">Not just a name tag.</span>
           </h1>
 
-          <p className="mt-6 max-w-[490px] text-[17px] leading-[1.55] text-on-dark-2 md:text-[19px]">
+          <p className="mt-[26px] max-w-[490px] text-[17px] leading-[1.5] text-on-dark-2 md:text-[19px]">
             Live Connect turns every event into an open door. See exactly who&apos;s
             in the room, find the people who matter, and connect or save their
             details in a single tap.

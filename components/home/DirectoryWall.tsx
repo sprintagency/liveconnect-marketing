@@ -37,13 +37,13 @@ export default function DirectoryWall() {
             <h2 className="mt-[14px] font-display text-[32px] font-normal tracking-[-1px] text-ink-text md:text-[44px]">
               See who&apos;s in the room
             </h2>
-            <p className="mt-4 text-[17px] leading-[1.55] text-body md:text-[18px]">
+            <p className="mt-4 text-[17px] leading-[1.5] text-body md:text-[18px]">
               Real people, really here, updated the moment they check in. This
               is what the directory looks like from your phone.
             </p>
           </div>
-          <div className="flex min-w-[280px] items-center gap-[10px] rounded-full border border-border-2 bg-cream px-[18px] py-3 text-[15px] font-medium text-muted">
-            <Search size={18} strokeWidth={2} />
+          <div className="flex items-center gap-[9px] text-[14px] font-semibold text-muted-2">
+            <Search size={17} strokeWidth={2} />
             Search by name, company, or role
           </div>
         </div>

@@ -8,17 +8,8 @@ const MODULES: { icon: ReactNode; title: string; body: string }[] = [
   { icon: <Star size={21} />, title: "Sponsor 'Presented by'", body: "Your sponsor's logo and link stay in the header for the whole event." },
   { icon: <UsersPlus size={21} />, title: "Join requests feed", body: "Every tap on your CTA is captured for organized post event follow up." },
   { icon: <Download size={21} />, title: "Stats & CSV exports", body: "Live check in stats, plus attendee, connection-graph, and join-request exports." },
-  { icon: <Wifi size={21} />, title: "Built for venue wifi", body: "Realtime plus gentle polling means no list or badge ever silently freezes." },
+  { icon: <Wifi size={21} />, title: "Works on venue wifi", body: "Even when the wifi is patchy, the room list and your badge keep updating instead of freezing." },
 ];
-
-function TakeoverHeader() {
-  return (
-    <span className="absolute left-4 top-[14px] flex items-center gap-[7px] text-[11px] font-bold text-cream">
-      <span className="h-2 w-2 rounded-full bg-teal" />
-      Access Fort Worth
-    </span>
-  );
-}
 
 export default function LiveScreen() {
   return (
@@ -35,7 +26,7 @@ export default function LiveScreen() {
           <h2 className="mt-[14px] font-display text-[32px] font-normal tracking-[-1px] text-ink-text md:text-[44px]">
             Own the room&apos;s attention
           </h2>
-          <p className="mx-auto mt-4 max-w-[600px] text-[17px] leading-[1.55] text-body md:text-[18px]">
+          <p className="mx-auto mt-4 max-w-[600px] text-[17px] leading-[1.5] text-body md:text-[18px]">
             When it counts, organizers take over every phone in the room in real
             time, spotlight the speaker, or invite the whole room to join.
           </p>
@@ -52,13 +43,12 @@ export default function LiveScreen() {
                 <h3 className="font-display text-[20px] font-normal text-ink-text">
                   Speaking Now
                 </h3>
-                <div className="text-[13.5px] font-semibold text-muted">
+                <div className="mt-[3px] text-[13.5px] font-semibold text-muted">
                   Spotlight up to 5 speakers, live
                 </div>
               </div>
             </div>
             <div className="relative mt-5 flex h-[236px] flex-col items-center justify-center rounded-[16px] bg-charcoal p-[18px]">
-              <TakeoverHeader />
               <div className="inline-flex items-center gap-[7px] rounded-full bg-teal px-[14px] py-[6px] leading-none shadow-[0_6px_16px_rgba(8,200,136,0.4)]">
                 <span className="h-[7px] w-[7px] rounded-full bg-ink" />
                 <span className="text-[11px] font-bold leading-none tracking-[1.2px] text-ink">
@@ -91,15 +81,14 @@ export default function LiveScreen() {
                 <h3 className="font-display text-[20px] font-normal text-ink-text">
                   One tap join
                 </h3>
-                <div className="text-[13.5px] font-semibold text-muted">
+                <div className="mt-[3px] text-[13.5px] font-semibold text-muted">
                   Turn attention into follow ups
                 </div>
               </div>
             </div>
             <div className="relative mt-5 flex h-[236px] flex-col items-center justify-center rounded-[16px] bg-charcoal p-6 text-center">
-              <TakeoverHeader />
               <div className="font-display text-[21px] font-semibold text-cream">
-                Join Access Fort Worth
+                Join the room
               </div>
               <div className="mt-2 max-w-[230px] text-[13px] leading-[1.5] text-on-dark">
                 Members only mixers and summits, all year round.
@@ -125,10 +114,10 @@ export default function LiveScreen() {
                 {m.icon}
               </div>
               <div>
-                <div className="font-display text-[16px] font-bold text-ink-text">
+                <div className="font-display text-[16px] font-bold leading-[1.2] text-ink-text">
                   {m.title}
                 </div>
-                <div className="mt-1 text-[13.5px] leading-[1.5] text-body">
+                <div className="mt-[7px] text-[13.5px] leading-[1.5] text-body">
                   {m.body}
                 </div>
               </div>

@@ -45,7 +45,7 @@ export default function Nav() {
             <a
               key={l.href}
               href={l.href}
-              className="text-[15px] font-normal text-light-dark transition-colors hover:text-teal"
+              className="font-display text-[15px] font-normal text-light-dark transition-colors hover:text-teal"
             >
               {l.label === "signalscore" ? <SignalScoreLabel /> : l.label}
             </a>
@@ -56,13 +56,13 @@ export default function Nav() {
         <div className="hidden items-center gap-4 lg:flex">
           <a
             href={links.signIn}
-            className="text-[15px] font-bold text-cream transition-colors hover:text-teal"
+            className="font-display text-[15px] font-bold text-cream transition-colors hover:text-teal"
           >
             Sign in
           </a>
           <a
             href={links.getStarted}
-            className="inline-flex items-center justify-center rounded-full bg-teal px-5 py-[11px] text-[15px] font-bold leading-none text-ink shadow-[0_8px_20px_rgba(0,0,0,0.35)] transition-transform hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center rounded-full bg-teal px-5 py-[11px] font-display text-[15px] font-bold leading-none text-ink shadow-[0_8px_20px_rgba(0,0,0,0.35)] transition-transform hover:-translate-y-0.5"
           >
             Get started
           </a>
@@ -99,7 +99,7 @@ export default function Nav() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-2 py-3 text-[16px] font-medium text-light-dark hover:bg-white/5"
+                className="rounded-lg px-2 py-3 font-display text-[16px] font-medium text-light-dark hover:bg-white/5"
               >
                 {l.label === "signalscore" ? <SignalScoreLabel /> : l.label}
               </a>
@@ -107,13 +107,13 @@ export default function Nav() {
             <div className="mt-3 flex flex-col gap-3 border-t border-white/8 pt-4">
               <a
                 href={links.signIn}
-                className="rounded-full border border-white/20 py-3 text-center text-[15px] font-bold text-cream"
+                className="rounded-full border border-white/20 py-3 text-center font-display text-[15px] font-bold text-cream"
               >
                 Sign in
               </a>
               <a
                 href={links.getStarted}
-                className="rounded-full bg-teal py-3 text-center text-[15px] font-bold text-ink"
+                className="rounded-full bg-teal py-3 text-center font-display text-[15px] font-bold text-ink"
               >
                 Get started
               </a>

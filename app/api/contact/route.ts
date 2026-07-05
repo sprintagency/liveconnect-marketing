@@ -2,13 +2,19 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 /**
- * Contact form handler for the marketing site. Emails both recipients
- * server-side via Resend. Self-contained: no shared DB or app coupling.
+ * Contact form handler for the marketing site. Persists each submission to
+ * Supabase and emails both recipients via Resend. Both sinks are best-effort:
+ * a submission succeeds if it lands in at least one of them.
  *
  * Env required in this project (Vercel):
- *   RESEND_API_KEY   - Resend API key
- *   CONTACT_FROM     - verified sender, e.g. "LiveConnect <hello@liveconnectusa.com>"
- *   CONTACT_TO       - comma-separated recipients (defaults below)
+ *   RESEND_API_KEY             - Resend API key
+ *   CONTACT_FROM               - verified sender, e.g. "LiveConnect <hello@liveconnectusa.com>"
+ *   CONTACT_TO                 - comma-separated recipients (defaults below)
+ *   SUPABASE_URL               - Supabase project URL, e.g. https://xxxx.supabase.co
+ *   SUPABASE_SERVICE_ROLE_KEY  - service-role key (server-only; bypasses RLS)
+ *
+ * Table (see supabase/schema.sql):
+ *   contact_submissions(name, email, org, event_type, message, created_at)
  */
 const TO = (
   process.env.CONTACT_TO ??
@@ -29,6 +35,41 @@ const clean = (v: unknown, max = 4000): string =>
 
 const esc = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+type Submission = {
+  name: string;
+  email: string;
+  org: string;
+  event_type: string;
+  message: string;
+};
+
+/** Persist the submission to Supabase via PostgREST. Best-effort. */
+async function saveToSupabase(rec: Submission): Promise<boolean> {
+  const url = process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !key) return false;
+  try {
+    const res = await fetch(`${url}/rest/v1/contact_submissions`, {
+      method: "POST",
+      headers: {
+        apikey: key,
+        Authorization: `Bearer ${key}`,
+        "Content-Type": "application/json",
+        Prefer: "return=minimal",
+      },
+      body: JSON.stringify(rec),
+    });
+    if (!res.ok) {
+      console.error("[contact] Supabase insert failed", res.status, await res.text());
+      return false;
+    }
+    return true;
+  } catch (err) {
+    console.error("[contact] Supabase insert threw", err);
+    return false;
+  }
+}
 
 export async function POST(req: Request) {
   let body: Record<string, unknown>;
@@ -51,12 +92,22 @@ export async function POST(req: Request) {
     );
   }
 
+  // Persist first so a submission is never lost, even if email is down.
+  const saved = await saveToSupabase({
+    name,
+    email,
+    org,
+    event_type: etype,
+    message,
+  });
+
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    // Not configured yet — surface an error so the form shows the mailto fallback.
     console.error("[contact] RESEND_API_KEY is not set");
+    // If we at least recorded it, treat the submission as accepted.
+    if (saved) return NextResponse.json({ ok: true });
     return NextResponse.json(
-      { error: "Email service not configured." },
+      { error: "Contact service not configured." },
       { status: 503 },
     );
   }
@@ -97,10 +148,12 @@ export async function POST(req: Request) {
     });
     if (error) {
       console.error("[contact] Resend error", error);
+      if (saved) return NextResponse.json({ ok: true });
       return NextResponse.json({ error: "Send failed." }, { status: 502 });
     }
   } catch (err) {
     console.error("[contact] send threw", err);
+    if (saved) return NextResponse.json({ ok: true });
     return NextResponse.json({ error: "Send failed." }, { status: 502 });
   }
 

@@ -23,13 +23,13 @@ export default function Cities() {
           <br />
           The country next.
         </h2>
-        <p className="mx-auto mt-[18px] max-w-[600px] text-[17px] leading-[1.55] text-on-dark-2 md:text-[18px]">
+        <p className="mx-auto mt-[18px] max-w-[600px] text-[17px] leading-[1.5] text-on-dark-2 md:text-[18px]">
           We&apos;re live in Fort Worth and rolling into cities across the U.S.
           Be the first room we open in yours.
         </p>
         <div className="mt-[38px] flex flex-wrap justify-center gap-3">
-          <span className="inline-flex items-center gap-[9px] rounded-full bg-teal px-5 py-[11px] text-[15px] font-bold leading-none text-ink shadow-[0_10px_24px_rgba(0,0,0,0.28)]">
-            <span className="h-2 w-2 rounded-full bg-cream" />
+          <span className="live-chip inline-flex items-center gap-[9px] rounded-full border border-teal/60 bg-[#0f1a14] px-5 py-[11px] text-[15px] font-bold leading-none text-teal">
+            <span className="live-chip-dot h-2 w-2 rounded-full bg-live" />
             Fort Worth · Live
           </span>
           {cities.map((c) => (
