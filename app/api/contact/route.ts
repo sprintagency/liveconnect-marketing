@@ -18,7 +18,8 @@ const TO = (
   .map((s) => s.trim())
   .filter(Boolean);
 
-const FROM = process.env.CONTACT_FROM ?? "LiveConnect <hello@liveconnectusa.com>";
+const FROM =
+  process.env.CONTACT_FROM ?? "LiveConnect <noreply@liveconnectusa.com>";
 
 const isEmail = (v: unknown): v is string =>
   typeof v === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
