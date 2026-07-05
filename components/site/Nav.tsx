@@ -17,7 +17,9 @@ function SignalScoreLabel() {
   return (
     <>
       Signal<span className="font-bold">Score</span>
-      <sup className="align-super text-[9px] font-bold">™</sup>
+      <span className="relative -top-[0.32em] ml-[0.5px] inline-block text-[0.7em] font-bold">
+        ™
+      </span>
     </>
   );
 }
