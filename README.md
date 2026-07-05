@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LiveConnect — Marketing Site
 
-## Getting Started
+The public marketing/sales site for LiveConnect (`www.liveconnectusa.com` + apex).
+Standalone Next.js app, **fully isolated** from the product app: no database, no
+auth, no shared deployment. Built from the design handoff in
+`design_handoff_liveconnect`.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router) + React 19 + TypeScript
+- Tailwind CSS v4 (design tokens in `app/globals.css`)
+- Fonts: Montserrat (`next/font`), Nexa (loaded via cdnfonts — see note below)
+- Resend for the contact form email
+
+## Pages
+
+- `/` — home (hero, event marquee, scroll-pinned "how it works" phone, live
+  directory wall, features, SignalScore, live screen, use cases, white-label,
+  cities, CTA)
+- `/contact` — "Talk to our team" form → `POST /api/contact` (Resend)
+
+## Local dev
 
 ```bash
+npm install
+cp .env.example .env.local   # fill in values
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Auth / the master account
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Sign-up and sign-in are **not** in this project. They live on the product app at
+`app.liveconnectusa.com`, where the cross-subdomain SSO cookie (scoped to
+`.liveconnectusa.com`) and Supabase auth already exist. The nav / hero / CTA
+buttons deep-link there via `NEXT_PUBLIC_APP_URL` (`lib/links.ts`).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploy (its own Vercel project)
 
-## Learn More
+This is a **separate** Vercel project from the product app, so deploys here never
+touch the app or its database.
 
-To learn more about Next.js, take a look at the following resources:
+1. Create a new Vercel project pointed at this repo.
+2. Set env vars (see `.env.example`): `RESEND_API_KEY`, `CONTACT_FROM`,
+   `CONTACT_TO`, `NEXT_PUBLIC_APP_URL`.
+3. Assign domains `www.liveconnectusa.com` + apex `liveconnectusa.com` to this
+   project. Tenant subdomains (`*.liveconnectusa.com`) and `app.` stay on the
+   product app's Vercel project.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Notes / TODO before production
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Nexa is a commercial font.** It's currently loaded from cdnfonts for the
+  prototype. For production, self-host the licensed `woff2` with `@font-face`
+  metric overrides (`ascent-override` etc.) per the handoff, and update the
+  `<link>` in `app/layout.tsx`.
+- **Contact form** returns HTTP 503 until `RESEND_API_KEY` is set; the form then
+  shows a `mailto:` fallback. Verify the `CONTACT_FROM` domain in Resend.
+- Directory names/companies are placeholder sample data (`lib/people.ts`).
+- Replace `/public/assets` imagery with final licensed assets.

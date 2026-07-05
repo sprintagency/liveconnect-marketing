@@ -1,26 +1,222 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================================
+   Design tokens (from the LiveConnect handoff)
+   Stark cream + near-black enterprise palette; teal as accent.
+   ============================================================ */
+@theme {
+  --color-ink: #14130d;
+  --color-ink-text: #1a1912;
+  --color-charcoal: #16150f;
+  --color-charcoal-2: #1b1a13;
+  --color-charcoal-3: #201d15;
+  --color-nav: #0a0a0b;
+  --color-footer: #100f0a;
+
+  --color-cream: #f4f0e8;
+  --color-cream-2: #e9e4da;
+  --color-cream-3: #e3ddd1;
+
+  --color-border: #ddd6c8;
+  --color-border-2: #dbd4c6;
+
+  --color-body: #7a7468;
+  --color-muted: #a29c8e;
+  --color-muted-2: #928c7f;
+  --color-on-dark: #aaa497;
+  --color-on-dark-2: #b1aa9c;
+  --color-light-dark: #cec7b8;
+  --color-light-dark-2: #d9d3c6;
+
+  --color-teal: #08c888;
+  --color-teal-dark: #05a870;
+  --color-live: #37d67a;
+
+  --font-display: "Nexa", var(--font-montserrat), "Montserrat", sans-serif;
+  --font-body: var(--font-montserrat), "Montserrat", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--color-cream);
+    color: var(--color-ink-text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+  p,
+  li {
+    text-wrap: pretty;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  input,
+  textarea,
+  select {
+    font-family: var(--font-body);
+  }
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+    border-color: var(--color-teal) !important;
+    box-shadow: 0 0 0 3px rgba(8, 200, 136, 0.18) !important;
+  }
+  ::placeholder {
+    color: var(--color-muted);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ============================================================
+   Systemic vertical-centering fix.
+   Nexa renders its glyphs above the line-box center; Montserrat is
+   centered. Trimming the line box to cap-height / alphabetic baseline makes
+   the actual glyphs center inside buttons, pills, and chips, so we use plain
+   symmetric padding everywhere instead of per-element padding hacks.
+   ============================================================ */
+@supports (text-box-trim: trim-both) {
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  li,
+  a,
+  span,
+  button,
+  label,
+  input,
+  select,
+  textarea,
+  .font-display {
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+  }
+}
+
+/* ============================================================
+   Keyframes (verbatim from the prototype)
+   ============================================================ */
+@keyframes lcpulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes lcfloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes lcUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+@keyframes lcDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes lcMarqueeX {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.anim-float {
+  animation: lcfloat 6s ease-in-out infinite;
+}
+.anim-pulse {
+  animation: lcpulse 2s ease-out infinite;
+}
+.marquee-track {
+  animation: lcMarqueeX 42s linear infinite;
+}
+.wall-col-a {
+  animation: lcUp 55s linear infinite;
+  will-change: transform;
+}
+.wall-col-b {
+  animation: lcDown 67s linear infinite;
+  will-change: transform;
+}
+.wall-col-c {
+  animation: lcUp 47s linear infinite;
+  will-change: transform;
+}
+
+/* Edge-fade masks */
+.mask-x {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+.mask-y {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 13%,
+    #000 87%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 13%,
+    #000 87%,
+    transparent 100%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-float,
+  .anim-pulse,
+  .marquee-track,
+  .wall-col-a,
+  .wall-col-b,
+  .wall-col-c {
+    animation: none !important;
+  }
 }
