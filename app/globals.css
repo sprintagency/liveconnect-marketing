@@ -189,6 +189,51 @@
   }
 }
 
+/* White-label brand cycle: fades accent elements through brand colors
+   to demonstrate that organizers can run the app under any palette. */
+@keyframes lcBrandBg {
+  0%,
+  100% {
+    background-color: #08c888;
+  }
+  20% {
+    background-color: #f97316;
+  }
+  40% {
+    background-color: #2563eb;
+  }
+  60% {
+    background-color: #7c3aed;
+  }
+  80% {
+    background-color: #e11d48;
+  }
+}
+@keyframes lcBrandText {
+  0%,
+  100% {
+    color: #08c888;
+  }
+  20% {
+    color: #f97316;
+  }
+  40% {
+    color: #2563eb;
+  }
+  60% {
+    color: #7c3aed;
+  }
+  80% {
+    color: #e11d48;
+  }
+}
+.brand-bg {
+  animation: lcBrandBg 14s ease-in-out infinite;
+}
+.brand-text {
+  animation: lcBrandText 14s ease-in-out infinite;
+}
+
 .anim-float {
   animation: lcfloat 6s ease-in-out infinite;
 }
@@ -257,6 +302,8 @@
   .live-chip,
   .live-chip-dot,
   .marquee-track,
+  .brand-bg,
+  .brand-text,
   .wall-col-a,
   .wall-col-b,
   .wall-col-c {

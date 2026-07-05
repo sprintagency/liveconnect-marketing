@@ -31,10 +31,10 @@ export default function SignalScore() {
               ™
             </span>
           </div>
-          <h2 className="mt-7 font-display text-[32px] font-normal tracking-[-1px] text-cream md:text-[44px]">
+          <h2 className="mt-10 font-display text-[32px] font-normal tracking-[-1px] text-cream md:text-[44px]">
             Did the room actually connect?
           </h2>
-          <p className="mt-6 text-[18px] leading-[1.4] text-on-dark">
+          <p className="mt-8 text-[18px] leading-[1.4] text-on-dark">
             SignalScore™ turns a night of networking into one explainable 0–100
             number, for the whole event, and privately for each attendee. It
             rewards mutual, relevant, followed-through introductions over raw

@@ -26,7 +26,7 @@ export default function LiveScreen() {
           <h2 className="mt-[14px] font-display text-[32px] font-normal tracking-[-1px] text-ink-text md:text-[44px]">
             Own the room&apos;s attention
           </h2>
-          <p className="mx-auto mt-6 max-w-[600px] text-[17px] leading-[1.4] text-body md:text-[18px]">
+          <p className="mx-auto mt-8 max-w-[600px] text-[17px] leading-[1.4] text-body md:text-[18px]">
             When it counts, organizers take over every phone in the room in real
             time, spotlight the speaker, or invite the whole room to join.
           </p>
@@ -43,7 +43,7 @@ export default function LiveScreen() {
                 <h3 className="font-display text-[20px] font-normal text-ink-text">
                   Speaking Now
                 </h3>
-                <div className="mt-[3px] text-[13.5px] font-semibold text-muted">
+                <div className="mt-2 text-[13.5px] font-semibold text-muted">
                   Spotlight up to 5 speakers, live
                 </div>
               </div>
@@ -81,7 +81,7 @@ export default function LiveScreen() {
                 <h3 className="font-display text-[20px] font-normal text-ink-text">
                   One tap join
                 </h3>
-                <div className="mt-[3px] text-[13.5px] font-semibold text-muted">
+                <div className="mt-2 text-[13.5px] font-semibold text-muted">
                   Turn attention into follow ups
                 </div>
               </div>

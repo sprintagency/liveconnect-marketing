@@ -23,7 +23,7 @@ export default function Cities() {
           <br />
           The country next.
         </h2>
-        <p className="mx-auto mt-6 max-w-[600px] text-[17px] leading-[1.4] text-on-dark-2 md:text-[18px]">
+        <p className="mx-auto mt-8 max-w-[600px] text-[17px] leading-[1.4] text-on-dark-2 md:text-[18px]">
           We&apos;re live in Fort Worth and rolling into cities across the U.S.
           Be the first room we open in yours.
         </p>

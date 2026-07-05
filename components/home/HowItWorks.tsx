@@ -72,7 +72,7 @@ export default function HowItWorks() {
         <h2 className="mt-[14px] font-display text-[32px] font-normal tracking-[-1px] text-ink-text md:text-[44px]">
           From walking in to following up
         </h2>
-        <p className="mx-auto mt-6 max-w-[560px] text-[17px] leading-[1.4] text-body md:text-[18px]">
+        <p className="mx-auto mt-8 max-w-[560px] text-[17px] leading-[1.4] text-body md:text-[18px]">
           Keep scrolling, watch the whole thing happen on one screen, one tap
           from the door to the follow up.
         </p>

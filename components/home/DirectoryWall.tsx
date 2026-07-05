@@ -37,7 +37,7 @@ export default function DirectoryWall() {
             <h2 className="mt-[14px] font-display text-[32px] font-normal tracking-[-1px] text-ink-text md:text-[44px]">
               See who&apos;s in the room
             </h2>
-            <p className="mt-6 text-[17px] leading-[1.4] text-body md:text-[18px]">
+            <p className="mt-8 text-[17px] leading-[1.4] text-body md:text-[18px]">
               Real people, really here, updated the moment they check in. This
               is what the directory looks like from your phone.
             </p>

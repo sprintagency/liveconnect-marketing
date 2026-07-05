@@ -25,7 +25,7 @@ export default function Organizers() {
           <h2 className="mt-[14px] font-display text-[32px] font-normal tracking-[-1px] text-ink-text md:text-[42px]">
             Run it under your own brand
           </h2>
-          <p className="mt-6 text-[18px] leading-[1.4] text-body">
+          <p className="mt-8 text-[18px] leading-[1.4] text-body">
             Live Connect is fully white label. Your logo, your colors, your
             event, powered by the same live directory attendees already love.
           </p>
@@ -52,14 +52,14 @@ export default function Organizers() {
             <div className="overflow-hidden rounded-[28px] bg-[#f3f6fb] p-[18px]">
                 <div className="rounded-[16px] border border-border bg-cream p-4">
                   <div className="flex items-center gap-2 text-[14px] font-extrabold text-ink-text">
-                    <CheckCircle size={18} className="text-[#37b866]" strokeWidth={2.2} />
+                    <CheckCircle size={18} className="brand-text text-[#37b866]" strokeWidth={2.2} />
                     You&apos;re checked in
                   </div>
                   <p className="mb-3 mt-2 text-[12px] leading-[1.45] text-[#827c70]">
                     238 people are in the room. Browse who&apos;s here and start
                     connecting.
                   </p>
-                  <div className="rounded-[11px] bg-teal py-[11px] text-center text-[13px] font-bold text-ink">
+                  <div className="brand-bg rounded-[11px] bg-teal py-[11px] text-center text-[13px] font-bold text-ink">
                     View the directory
                   </div>
                 </div>
@@ -73,7 +73,7 @@ export default function Organizers() {
                         </div>
                         <div className="truncate text-[11.5px] text-[#827c70]">{r.role}</div>
                       </div>
-                      <span className="inline-flex items-center justify-center rounded-[8px] bg-teal px-[13px] py-[6px] text-[11px] font-bold leading-none text-ink">
+                      <span className="brand-bg inline-flex items-center justify-center rounded-[8px] bg-teal px-[13px] py-[6px] text-[11px] font-bold leading-none text-ink">
                         Connect
                       </span>
                     </div>

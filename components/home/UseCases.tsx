@@ -38,7 +38,7 @@ export default function UseCases() {
           <h2 className="mt-[14px] font-display text-[32px] font-normal tracking-[-1px] md:text-[44px]">
             Built for every kind of room
           </h2>
-          <p className="mt-6 text-[17px] leading-[1.4] text-on-dark-2 md:text-[18px]">
+          <p className="mt-8 text-[17px] leading-[1.4] text-on-dark-2 md:text-[18px]">
             Wherever people gather to do business, Live Connect makes the room
             searchable.
           </p>
