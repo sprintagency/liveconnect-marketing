@@ -27,7 +27,9 @@ export default function SignalScore() {
           <div className="font-display text-[27px] leading-none tracking-[-0.5px] text-cream">
             <span className="font-normal">Signal</span>
             <span className="font-bold">Score</span>
-            <sup className="ml-px align-super text-[11px] font-bold">™</sup>
+            <span className="relative -top-[9px] ml-[2px] inline-block text-[14px] font-bold">
+              ™
+            </span>
           </div>
           <h2 className="mt-7 font-display text-[32px] font-normal tracking-[-1px] text-cream md:text-[44px]">
             Did the room actually connect?
