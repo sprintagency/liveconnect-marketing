@@ -6,7 +6,7 @@ import Link from "next/link";
 import { links } from "@/lib/links";
 
 /* ============================================================
-   SignalScore™ explainer — interactive walkthrough.
+   SignalScore™ explainer: interactive walkthrough.
 
    Ported from the Claude Design handoff, with one deliberate change:
    the page never prints the actual scoring weights, the literal
@@ -106,7 +106,7 @@ function Reveal({
   );
 }
 
-/** Numbered eyebrow row: 01 —— WHY IT EXISTS */
+/** Numbered eyebrow row: 01 / WHY IT EXISTS */
 function Eyebrow({
   n,
   label,
@@ -199,7 +199,7 @@ function ScoreRing({
   );
 }
 
-/** Qualitative weight chip — conveys relative importance without a number. */
+/** Qualitative weight chip: conveys relative importance without a number. */
 function TierChip({ tier }: { tier: string }) {
   return (
     <span className="rounded-full bg-[rgba(8,200,136,.1)] px-[9px] py-[3px] text-[10px] font-semibold uppercase tracking-[1.2px] text-[#4be0ab]">
@@ -268,7 +268,7 @@ const PRINCIPLES = [
   {
     n: "02",
     t: "Reciprocity is the signal",
-    b: "A one-way save is noise. A mutual tie — both saved each other, or both replied — is the atomic unit of a real connection.",
+    b: "A one-way save is noise. A mutual tie, where both saved each other or both replied, is the atomic unit of a real connection.",
   },
   {
     n: "03",
@@ -283,11 +283,11 @@ const PRINCIPLES = [
 ];
 
 const GLOSSARY = [
-  { t: "Edge", d: "Any sign of interest — a save, a profile view, an intro. One direction only." },
+  { t: "Edge", d: "Any sign of interest: a save, a profile view, an intro. One direction only." },
   { t: "Tie", d: "A reciprocated edge. Both people saved each other, or both replied. This is a real connection." },
   { t: "Reciprocity", d: "How much of the interest in the room turned mutual instead of staying one-way." },
   { t: "Inclusion", d: "The share of attendees who left with at least one real tie. The thing that matters most." },
-  { t: "Relevance", d: "How well two people actually fit — what one offers against what the other needs." },
+  { t: "Relevance", d: "How well two people actually fit: what one offers against what the other needs." },
   { t: "Follow-through", d: "How far a connection travelled: from just showing up, to a two-way conversation." },
 ];
 
@@ -369,7 +369,7 @@ const SEGMENTS = [
 const ROADMAP = [
   {
     t: "Trust score",
-    b: "A blend of five repeated signals — familiarity, similarity, competence, reciprocity and reliability — built over time.",
+    b: "A blend of five repeated signals built over time: familiarity, similarity, competence, reciprocity and reliability.",
   },
   {
     t: "Business opportunity",
@@ -384,11 +384,11 @@ const ROADMAP = [
 const FAQ = [
   {
     q: "Can someone game their way to a high score?",
-    a: "It's built to resist exactly that. Volume is capped per person, and only reciprocated ties move the number — blasting the whole room with one-way saves does almost nothing. Depth beats breadth by design.",
+    a: "It's built to resist exactly that. Volume is capped per person, and only reciprocated ties move the number. Blasting the whole room with one-way saves does almost nothing. Depth beats breadth by design.",
   },
   {
     q: "Is my personal score private?",
-    a: "Always. A personal SignalScore™ is shown to one person only, never as a public ranking. It's enforced at the database with row-level security, scoped per organization, and computed server-side — attendees never see anyone else's raw activity.",
+    a: "Always. A personal SignalScore™ is shown to one person only, never as a public ranking. It's enforced at the database with row-level security, scoped per organization, and computed server-side. Attendees never see anyone else's raw activity.",
   },
   {
     q: "Do you publish the exact weights?",
@@ -516,7 +516,7 @@ export default function SignalScoreExplainer() {
   let gMsg = "Only reciprocated ties move the number. One-way reach is just interest.";
   if (st.lastAction === "spam")
     gMsg =
-      "One person blasted everyone — seven one-way reaches, zero real ties. The room signal barely registers. You can't game it.";
+      "One person blasted everyone: seven one-way reaches, zero real ties. The room signal barely registers. You can't game it.";
   if (st.lastAction === "ties")
     gMsg =
       "Just two reciprocated ties, and the room signal jumps. Depth beats breadth, every time.";
@@ -668,7 +668,7 @@ export default function SignalScoreExplainer() {
             </h2>
             <p className="m-0 text-[clamp(15px,2vw,18px)] leading-[1.6] text-[#a7a49b]">
               Tickets sold, badges scanned, messages sent. None of it says whether
-              the room worked — whether people left with connections that matter.{" "}
+              the room worked, whether people left with connections that matter.{" "}
               <Ss /> is built on four principles.
             </p>
           </Reveal>
@@ -841,8 +841,8 @@ export default function SignalScoreExplainer() {
           <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-x-8 gap-y-6">
             {GLOSSARY.map((g, i) => (
               <Reveal key={g.t} delay={i * 0.05} className="border-l-2 border-[rgba(8,200,136,.4)] pl-4">
-                <div className="font-display text-[17px] font-bold text-[#f4f0e8]">{g.t}</div>
-                <p className="m-0 mt-1 text-[13.5px] leading-[1.55] text-[#9a978f]">{g.d}</p>
+                <div className="font-display text-[17px] font-bold leading-tight text-[#f4f0e8]">{g.t}</div>
+                <p className="m-0 mt-2.5 text-[13.5px] leading-[1.6] text-[#9a978f]">{g.d}</p>
               </Reveal>
             ))}
           </div>
@@ -859,7 +859,7 @@ export default function SignalScoreExplainer() {
             </h2>
             <p className="m-0 text-[clamp(15px,2vw,18px)] leading-[1.6] text-[#5f5d56]">
               Move the sliders and watch a live model of the score respond. It
-              shows what each input <em>does</em> — the exact weighting stays under
+              shows what each input <em>does</em>. The exact weighting stays under
               the hood.
             </p>
           </Reveal>
@@ -919,7 +919,7 @@ export default function SignalScoreExplainer() {
                         <span className="flex items-center gap-2 text-[#c9c6bd]">
                           {b.label} <TierChip tier={b.tier} />
                         </span>
-                        <span className="font-display text-[#4be0ab]">{dim ? "—" : `${pct}%`}</span>
+                        <span className="font-display text-[#4be0ab]">{dim ? "off" : `${pct}%`}</span>
                       </div>
                       <div className="h-[6px] overflow-hidden rounded-full bg-white/[0.08]">
                         <div
@@ -946,7 +946,7 @@ export default function SignalScoreExplainer() {
             <p className="m-0 max-w-[68ch] text-[15.5px] leading-[1.65] text-[#5f5d56]">
               <strong className="text-[#14130d]">Dana at a 40-person founder dinner.</strong>{" "}
               She reaches out to six people over the night. Three of them save her
-              back or reply — three real ties from six attempts, so her reciprocity
+              back or reply: three real ties from six attempts, so her reciprocity
               quality is high. Two of those ties are a genuine fit for what
               she&apos;s building, and she gets a reply from one before she&apos;s
               even left. Modest
@@ -1133,7 +1133,7 @@ export default function SignalScoreExplainer() {
                 </span>
               </div>
 
-              {/* legend — names + relative order, deliberately no coefficients */}
+              {/* legend: names + relative order, deliberately no coefficients */}
               <div className="flex flex-col gap-[10px]">
                 {pieSlices.map((s) => (
                   <div key={s.label} className="flex items-center gap-3">
@@ -1146,7 +1146,7 @@ export default function SignalScoreExplainer() {
               <p className="m-0 mt-5 text-[14px] leading-[1.6] text-[#8b887f]">
                 {st.relAvail
                   ? "Four components share the score. With the AI signal on, relevance takes its own slice of the ring."
-                  : "Relevance is off — its slice is gone, and the other three grow to fill the ring. The score never becomes undefined and never leaves the 0–100 scale."}{" "}
+                  : "Relevance is off. Its slice is gone, and the other three grow to fill the ring. The score never becomes undefined and never leaves the 0–100 scale."}{" "}
                 The same graceful degradation protects every AI input: if the model
                 is off, the system falls back to a deterministic heuristic with zero
                 API calls, and the rest of the score runs unchanged.
@@ -1232,10 +1232,10 @@ export default function SignalScoreExplainer() {
             </h2>
             <p className="m-0 text-[clamp(15px,2vw,18px)] leading-[1.6] text-[#a7a49b]">
               The scores above read a single event from behavior. This layer adds
-              what behavior alone can&apos;t see — off-platform follow-up, real
-              outcomes, and trust built over repeated events — plus a longitudinal
-              trend that shows whether your events are getting better at connecting
-              people over time.
+              what behavior alone can&apos;t see: off-platform follow-up, real
+              outcomes, and trust built over repeated events. It also tracks a
+              longitudinal trend that shows whether your events are getting better
+              at connecting people over time.
             </p>
           </Reveal>
           <div className="grid grid-cols-[repeat(auto-fit,minmax(255px,1fr))] gap-5">
