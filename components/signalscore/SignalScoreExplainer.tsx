@@ -641,7 +641,7 @@ export default function SignalScoreExplainer() {
             A single number for the quality of a room.
           </h1>
         </Reveal>
-        <Reveal className="relative z-[2] mt-[26px]" delay={0.05}>
+        <Reveal className="relative z-[2] mt-10" delay={0.05}>
           <p className="m-0 max-w-[58ch] text-[clamp(16px,2.4vw,20px)] leading-[1.55] text-[#a7a49b]">
             <Ss /> measures relevant, reciprocated, followed-through connections.
             Computed from what actually happened in the room, never from
@@ -662,7 +662,7 @@ export default function SignalScoreExplainer() {
         <div className="mx-auto max-w-[1120px]">
           <Reveal className="mb-[60px] max-w-[64ch]">
             <Eyebrow n="01" label="Why it exists" />
-            <h2 className="m-0 mb-[22px] font-display text-[clamp(30px,5vw,52px)] font-normal leading-[1.05] tracking-[-0.02em]">
+            <h2 className="m-0 mb-9 font-display text-[clamp(30px,5vw,52px)] font-normal leading-[1.05] tracking-[-0.02em]">
               Most tools measure volume. Volume is easy to game and tells you
               nothing.
             </h2>
@@ -682,7 +682,7 @@ export default function SignalScoreExplainer() {
                 <div className="mb-[18px] font-display text-[30px] font-normal text-[#08c888]">
                   {p.n}
                 </div>
-                <h3 className="m-0 mb-[10px] font-display text-[21px] font-bold tracking-[-0.01em]">
+                <h3 className="m-0 mb-[14px] font-display text-[21px] font-bold tracking-[-0.01em]">
                   {p.t}
                 </h3>
                 <p className="m-0 text-[14.5px] leading-[1.6] text-[#9a978f]">{p.b}</p>
@@ -700,7 +700,7 @@ export default function SignalScoreExplainer() {
         <div className="mx-auto max-w-[1120px]">
           <Reveal className="mb-[44px] max-w-[64ch]">
             <Eyebrow n="02" label="The crux of the model" />
-            <h2 className="m-0 mb-[22px] font-display text-[clamp(30px,5vw,52px)] font-normal leading-[1.05] tracking-[-0.02em]">
+            <h2 className="m-0 mb-9 font-display text-[clamp(30px,5vw,52px)] font-normal leading-[1.05] tracking-[-0.02em]">
               An edge is interest. A tie is a connection.
             </h2>
             <p className="m-0 text-[clamp(15px,2vw,18px)] leading-[1.6] text-[#a7a49b]">
@@ -854,7 +854,7 @@ export default function SignalScoreExplainer() {
         <div className="mx-auto max-w-[1120px]">
           <Reveal className="mb-[52px] max-w-[64ch]">
             <Eyebrow n="03" label={<>Personal <Ss caps />, live</>} tone="tealDeep" />
-            <h2 className="m-0 mb-[22px] font-display text-[clamp(30px,5vw,52px)] font-normal leading-[1.05] tracking-[-0.02em]">
+            <h2 className="m-0 mb-9 font-display text-[clamp(30px,5vw,52px)] font-normal leading-[1.05] tracking-[-0.02em]">
               How well did I network? Four inputs, one honest number.
             </h2>
             <p className="m-0 text-[clamp(15px,2vw,18px)] leading-[1.6] text-[#5f5d56]">
@@ -939,11 +939,11 @@ export default function SignalScoreExplainer() {
           </div>
 
           {/* worked example (added helper) */}
-          <Reveal className="mt-12 rounded-[22px] border border-[rgba(20,19,13,.1)] bg-white px-7 py-8" delay={0.05}>
+          <Reveal className="mt-12 max-w-[760px] rounded-[22px] border border-[rgba(20,19,13,.1)] bg-white px-7 py-8" delay={0.05}>
             <div className="mb-3 text-[11.5px] font-semibold uppercase tracking-[2px] text-[#0a8f62]">
               A worked example
             </div>
-            <p className="m-0 max-w-[68ch] text-[15.5px] leading-[1.65] text-[#5f5d56]">
+            <p className="m-0 text-[15.5px] leading-[1.65] text-[#5f5d56]">
               <strong className="text-[#14130d]">Dana at a 40-person founder dinner.</strong>{" "}
               She reaches out to six people over the night. Three of them save her
               back or reply: three real ties from six attempts, so her reciprocity
@@ -964,7 +964,7 @@ export default function SignalScoreExplainer() {
         <div className="mx-auto max-w-[1120px]">
           <Reveal className="mb-[46px] max-w-[64ch]">
             <Eyebrow n="04" label="The follow-through funnel" />
-            <h2 className="m-0 mb-[22px] font-display text-[clamp(30px,5vw,52px)] font-normal leading-[1.05] tracking-[-0.02em]">
+            <h2 className="m-0 mb-9 font-display text-[clamp(30px,5vw,52px)] font-normal leading-[1.05] tracking-[-0.02em]">
               A ratchet, not a sum. You get credit for the furthest point you
               reached.
             </h2>
@@ -1005,7 +1005,7 @@ export default function SignalScoreExplainer() {
         <div className="mx-auto max-w-[1120px]">
           <Reveal className="mb-[52px] max-w-[64ch]">
             <Eyebrow n="05" label={<>Event <Ss caps />, live</>} tone="tealDeep" />
-            <h2 className="m-0 mb-[22px] font-display text-[clamp(30px,5vw,52px)] font-normal leading-[1.05] tracking-[-0.02em]">
+            <h2 className="m-0 mb-9 font-display text-[clamp(30px,5vw,52px)] font-normal leading-[1.05] tracking-[-0.02em]">
               How well did the room connect? Five rates, comparable across any
               size.
             </h2>
@@ -1071,7 +1071,7 @@ export default function SignalScoreExplainer() {
         <div className="mx-auto max-w-[1120px]">
           <Reveal className="mb-12 max-w-[64ch]">
             <Eyebrow n="06" label="Never undefined" />
-            <h2 className="m-0 mb-[22px] font-display text-[clamp(30px,5vw,52px)] font-normal leading-[1.05] tracking-[-0.02em]">
+            <h2 className="m-0 mb-9 font-display text-[clamp(30px,5vw,52px)] font-normal leading-[1.05] tracking-[-0.02em]">
               If relevance is unavailable, its share is redistributed, not dropped.
             </h2>
             <p className="m-0 text-[clamp(15px,2vw,18px)] leading-[1.6] text-[#a7a49b]">
@@ -1161,7 +1161,7 @@ export default function SignalScoreExplainer() {
         <div className="mx-auto max-w-[1120px]">
           <Reveal className="mb-[52px] max-w-[64ch]">
             <Eyebrow n="07" label="Why you can trust the number" tone="tealDeep" />
-            <h2 className="m-0 mb-[22px] font-display text-[clamp(30px,5vw,52px)] font-normal leading-[1.05] tracking-[-0.02em]">
+            <h2 className="m-0 mb-9 font-display text-[clamp(30px,5vw,52px)] font-normal leading-[1.05] tracking-[-0.02em]">
               A metric you can defend, line by line, in front of a board.
             </h2>
             <p className="m-0 text-[clamp(15px,2vw,18px)] leading-[1.6] text-[#5f5d56]">
@@ -1173,14 +1173,14 @@ export default function SignalScoreExplainer() {
           <div className="mb-[60px] grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] gap-[18px]">
             {GUARDRAILS.map((g, i) => (
               <Reveal key={g.t} delay={i * 0.06} className="rounded-[18px] border border-[rgba(20,19,13,.08)] bg-white p-[26px]">
-                <h3 className="m-0 mb-2 font-display text-[17px] font-bold">{g.t}</h3>
+                <h3 className="m-0 mb-3 font-display text-[17px] font-bold">{g.t}</h3>
                 <p className="m-0 text-[13.5px] leading-[1.55] text-[#6b6860]">{g.b}</p>
               </Reveal>
             ))}
           </div>
 
           <Reveal className="mb-9 max-w-[64ch]">
-            <h2 className="m-0 mb-[14px] font-display text-[clamp(26px,4vw,40px)] font-normal leading-[1.08] tracking-[-0.02em]">
+            <h2 className="m-0 mb-6 font-display text-[clamp(26px,4vw,40px)] font-normal leading-[1.08] tracking-[-0.02em]">
               The score becomes action. Every attendee gets a segment.
             </h2>
             <p className="m-0 text-[clamp(14px,1.8vw,17px)] leading-[1.6] text-[#5f5d56]">
@@ -1193,7 +1193,7 @@ export default function SignalScoreExplainer() {
             {SEGMENTS.map((s, i) => (
               <Reveal key={s.t} delay={i * 0.05} className="rounded-[18px] bg-[#14130d] p-6 text-[#f4f0e8]">
                 <div className="mb-4 h-8 w-8 rounded-full" style={{ background: s.c }} />
-                <h3 className="m-0 mb-[6px] font-display text-[17px] font-bold">{s.t}</h3>
+                <h3 className="m-0 mb-2.5 font-display text-[17px] font-bold">{s.t}</h3>
                 <p className="m-0 text-[13px] leading-[1.5] text-[#9a978f]">{s.d}</p>
               </Reveal>
             ))}
@@ -1205,7 +1205,7 @@ export default function SignalScoreExplainer() {
       <section className="bg-[#0b0b0c] px-6 py-[clamp(80px,12vw,130px)]">
         <div className="mx-auto max-w-[820px] text-center">
           <Reveal>
-            <h2 className="m-0 mb-[22px] font-display text-[clamp(28px,5vw,48px)] font-normal leading-[1.08] tracking-[-0.02em]">
+            <h2 className="m-0 mb-8 font-display text-[clamp(28px,5vw,48px)] font-normal leading-[1.08] tracking-[-0.02em]">
               Personal scores are for one person only. Never a public ranking.
             </h2>
             <p className="m-0 mx-auto max-w-[56ch] text-[clamp(15px,2vw,18px)] leading-[1.6] text-[#a7a49b]">
@@ -1226,7 +1226,7 @@ export default function SignalScoreExplainer() {
         <div className="mx-auto max-w-[1120px]">
           <Reveal className="mb-12 max-w-[64ch]">
             <Eyebrow n="08" label="Beyond a single room" />
-            <h2 className="m-0 mb-[22px] font-display text-[clamp(30px,5vw,52px)] font-normal leading-[1.05] tracking-[-0.02em]">
+            <h2 className="m-0 mb-9 font-display text-[clamp(30px,5vw,52px)] font-normal leading-[1.05] tracking-[-0.02em]">
               A cross-event, human-verified layer: trust, opportunity, and real
               outcomes.
             </h2>
