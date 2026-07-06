@@ -51,6 +51,13 @@ export default function SignalScore() {
               </div>
             ))}
           </div>
+          <a
+            href="/signalscore"
+            className="group mt-9 inline-flex items-center gap-2 font-display text-[15px] font-bold text-teal"
+          >
+            See how SignalScore™ works
+            <span className="transition-transform group-hover:translate-x-1">→</span>
+          </a>
         </div>
 
         {/* Score card */}

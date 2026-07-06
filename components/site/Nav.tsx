@@ -7,7 +7,7 @@ import { links } from "@/lib/links";
 const NAV_LINKS = [
   { href: "/#how", label: "How it works" },
   { href: "/#directory", label: "The room" },
-  { href: "/#signalscore", label: "signalscore" },
+  { href: "/signalscore", label: "signalscore" },
   { href: "/#usecases", label: "Use cases" },
   { href: "/#cities", label: "Cities" },
   { href: "/#organizers", label: "For organizers" },
