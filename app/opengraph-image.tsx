@@ -4,7 +4,7 @@ import { join } from "node:path";
 
 // Social share card. Mirrors the "OpenGraph Image" design handoff:
 // dark brand gradient, Nexa headline on the left, event photo on the right.
-export const alt = "LiveConnect — Meet the room. Not just a name tag.";
+export const alt = "LiveConnect: Meet the room. Not just a name tag.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

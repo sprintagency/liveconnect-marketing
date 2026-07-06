@@ -12,13 +12,13 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL("https://liveconnectusa.com"),
   title: {
-    default: "LiveConnect — Meet the room. Not just a name tag.",
+    default: "LiveConnect: Meet the room. Not just a name tag.",
     template: "%s · LiveConnect",
   },
   description:
     "LiveConnect turns every event into an open door. See exactly who's in the room, find the people who matter, and connect or save their details in a single tap.",
   openGraph: {
-    title: "LiveConnect — Meet the room. Not just a name tag.",
+    title: "LiveConnect: Meet the room. Not just a name tag.",
     description:
       "The live networking app that turns every event into an open room.",
     url: "https://liveconnectusa.com",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "LiveConnect — Meet the room. Not just a name tag.",
+    title: "LiveConnect: Meet the room. Not just a name tag.",
     description:
       "The live networking app that turns every event into an open room.",
   },

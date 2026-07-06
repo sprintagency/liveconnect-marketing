@@ -112,12 +112,12 @@ export async function POST(req: Request) {
     );
   }
 
-  const subject = `LiveConnect enquiry${org ? ` — ${org}` : ""}`;
+  const subject = `LiveConnect enquiry${org ? `: ${org}` : ""}`;
   const rows: [string, string][] = [
     ["Name", name],
     ["Email", email],
-    ["Organization", org || "—"],
-    ["Event type", etype || "—"],
+    ["Organization", org || "Not provided"],
+    ["Event type", etype || "Not provided"],
   ];
   const text =
     rows.map(([k, v]) => `${k}: ${v}`).join("\n") +
