@@ -9,7 +9,7 @@ auth, no shared deployment. Built from the design handoff in
 
 - Next.js 16 (App Router) + React 19 + TypeScript
 - Tailwind CSS v4 (design tokens in `app/globals.css`)
-- Fonts: Montserrat (`next/font`), Nexa (licensed, via Adobe Fonts / Typekit)
+- Fonts: Inter (`next/font`), Nexa (licensed, via Adobe Fonts / Typekit)
 - Resend for the contact form email
 
 ## Pages

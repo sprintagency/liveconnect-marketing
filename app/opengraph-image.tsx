@@ -11,11 +11,11 @@ export const contentType = "image/png";
 const fontPath = (f: string) => join(process.cwd(), "assets", "fonts", f);
 
 export default async function Image() {
-  const [nexa, montserrat, montserratBold, heroData, logoData] =
+  const [nexa, inter, interBold, heroData, logoData] =
     await Promise.all([
       readFile(fontPath("Nexa-Light.woff")),
-      readFile(fontPath("Montserrat-400.ttf")),
-      readFile(fontPath("Montserrat-700.ttf")),
+      readFile(fontPath("Inter-400.woff")),
+      readFile(fontPath("Inter-700.woff")),
       readFile(join(process.cwd(), "public", "assets", "event-hero.png")),
       readFile(join(process.cwd(), "public", "assets", "liveconnect_clr_w.svg")),
     ]);
@@ -32,7 +32,7 @@ export default async function Image() {
           display: "flex",
           position: "relative",
           color: "#f4f0e8",
-          fontFamily: "Montserrat",
+          fontFamily: "Inter",
           background:
             "linear-gradient(160deg,#16150f 0%,#100f0a 60%,#0b0b08 100%)",
         }}
@@ -150,10 +150,10 @@ export default async function Image() {
       ...size,
       fonts: [
         { name: "Nexa", data: nexa, style: "normal", weight: 400 },
-        { name: "Montserrat", data: montserrat, style: "normal", weight: 400 },
+        { name: "Inter", data: inter, style: "normal", weight: 400 },
         {
-          name: "Montserrat",
-          data: montserratBold,
+          name: "Inter",
+          data: interBold,
           style: "normal",
           weight: 700,
         },

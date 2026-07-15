@@ -32,8 +32,8 @@
   --color-teal-dark: #05a870;
   --color-live: #37d67a;
 
-  --font-display: "nexa", var(--font-montserrat), "Montserrat", sans-serif;
-  --font-body: var(--font-montserrat), "Montserrat", sans-serif;
+  --font-display: "nexa", var(--font-inter), "Inter", sans-serif;
+  --font-body: var(--font-inter), "Inter", sans-serif;
 }
 
 @layer base {
@@ -78,40 +78,6 @@
   }
   ::placeholder {
     color: var(--color-muted);
-  }
-}
-
-/* ============================================================
-   Systemic vertical-centering fix.
-   Nexa renders its glyphs above the line-box center; Montserrat is
-   centered. Trimming the line box to cap-height / alphabetic baseline makes
-   the actual glyphs center inside buttons, pills, and chips, so we use plain
-   symmetric padding everywhere instead of per-element padding hacks.
-   ============================================================ */
-@supports (text-box-trim: trim-both) {
-  h1,
-  h2,
-  h3,
-  h4,
-  p,
-  li,
-  a,
-  span,
-  button,
-  label,
-  input,
-  select,
-  textarea,
-  .font-display {
-    text-box-trim: trim-both;
-    text-box-edge: cap alphabetic;
-  }
-  /* Opt out where the box is clipped: trimming to the alphabetic baseline
-     pushes descenders (y, g, p) outside the box, so any overflow-hidden
-     ancestor crops them. Applies to the marquee and single-line truncation. */
-  .no-trim,
-  .truncate {
-    text-box-trim: none;
   }
 }
 

@@ -86,10 +86,10 @@ export default function SignalScore() {
                 strokeDashoffset="58.8"
                 transform="rotate(-90 60 60)"
               />
-              <text x="60" y="58" textAnchor="middle" fontSize="37" fontWeight="700" fill="#f4f0e8" fontFamily="nexa, Montserrat, sans-serif">
+              <text x="60" y="58" textAnchor="middle" fontSize="37" fontWeight="700" fill="#f4f0e8" fontFamily="nexa, Inter, sans-serif">
                 82
               </text>
-              <text x="60" y="77" textAnchor="middle" fontSize="9.5" fill="#a29c8e" letterSpacing="1.5" fontFamily="Montserrat, sans-serif">
+              <text x="60" y="77" textAnchor="middle" fontSize="9.5" fill="#a29c8e" letterSpacing="1.5" fontFamily="Inter, sans-serif">
                 / 100
               </text>
             </svg>

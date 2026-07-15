@@ -754,7 +754,7 @@ export default function SignalScoreExplainer() {
                       />
                       <text
                         x={P.x} y={P.y + 4} textAnchor="middle"
-                        fontSize={12} fontWeight={700} fontFamily="Montserrat, sans-serif"
+                        fontSize={12} fontWeight={700} fontFamily="Inter, sans-serif"
                         fill={hasTie ? "#14130d" : "#c9c6bd"}
                         style={{ pointerEvents: "none" }}
                       >

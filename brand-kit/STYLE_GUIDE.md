@@ -17,7 +17,7 @@ details (especially the typography rules in §3).
 Stark **cream + near-black enterprise** palette (Uber-like restraint) with a single
 **teal** accent used sparingly — primary buttons, eyebrows, active states, live
 dots. Avoid large teal fills. Display type is **Nexa** (light, tight, confident);
-body/UI is **Montserrat**. Dark sections use a warm near-black gradient, not pure
+body/UI is **Inter**. Dark sections use a warm near-black gradient, not pure
 black. Rounded corners everywhere (14–30px). Soft, low, warm shadows.
 
 Voice: plain, direct, benefit-first. Short sentences. No hype words, no jargon.
@@ -29,7 +29,7 @@ Voice: plain, direct, benefit-first. Short sentences. No hype words, no jargon.
 - **Next.js 16** (App Router, Turbopack), **React 19**, **TypeScript**
 - **Tailwind CSS v4** (CSS-first config via `@theme` in the stylesheet — there is
   **no `tailwind.config.js`**; tokens are CSS variables)
-- Fonts: **Montserrat** via `next/font/google`; **Nexa** via a licensed Adobe
+- Fonts: **Inter** via `next/font/google`; **Nexa** via a licensed Adobe
   Fonts (Typekit) `<link>` in the `<head>`
 - Icons: hand-rolled inline SVG components (stroke style, see §9)
 - Deploy: Vercel
@@ -48,10 +48,10 @@ sites look off.
 ### 3a. Two families
 | Role | Family | Notes |
 |---|---|---|
-| Display (h1–h4, numbers, wordmarks, CTA labels) | **Nexa** | Used at `font-weight: 400` ("normal") for that light, airy display look. Falls back to Montserrat. |
-| Body, paragraphs, UI, chips, form fields | **Montserrat** | Weights 400/500/600/700/800. |
+| Display (h1–h4, numbers, wordmarks, CTA labels) | **Nexa** | Used at `font-weight: 400` ("normal") for that light, airy display look. Falls back to Inter. |
+| Body, paragraphs, UI, chips, form fields | **Inter** | Weights 400/500/600/700/800. |
 
-- Tailwind classes: `font-display` (Nexa) and the default body font (Montserrat).
+- Tailwind classes: `font-display` (Nexa) and the default body font (Inter).
 - **Headings use `font-normal` (400), not bold** — Nexa at 400 is the signature look.
   Only wordmarks mix weights (e.g. "Signal**Score**": normal + bold).
 
@@ -167,8 +167,8 @@ reduced-motion. Copy it as-is into your project's global stylesheet.
   --color-teal-dark: #05a870;
   --color-live: #37d67a;
 
-  --font-display: "nexa", var(--font-montserrat), "Montserrat", sans-serif;
-  --font-body: var(--font-montserrat), "Montserrat", sans-serif;
+  --font-display: "nexa", var(--font-inter), "Inter", sans-serif;
+  --font-body: var(--font-inter), "Inter", sans-serif;
 }
 
 @layer base {
@@ -276,21 +276,20 @@ reduced-motion. Copy it as-is into your project's global stylesheet.
 
 ## 6. Font wiring (Next.js example)
 
-**`app/layout.tsx`** — Montserrat via `next/font`, Nexa via Typekit link:
+**`app/layout.tsx`** — Inter via `next/font`, Nexa via Typekit link:
 
 ```tsx
-import { Montserrat } from "next/font/google";
+import { Inter } from "next/font/google";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={montserrat.variable}>
+    <html lang="en" className={inter.variable}>
       <head>
         <link rel="preconnect" href="https://use.typekit.net" />
         <link rel="preconnect" href="https://p.typekit.net" />
@@ -308,7 +307,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 > **your own** Typekit kit that includes Nexa. The `brand-kit/fonts/*.woff` files
 > here are for **build-time OG image rendering only** (see §12) — do not self-host
 > them on the web without a license. If you have no Nexa license, the stack falls
-> back to Montserrat cleanly (headings just render in Montserrat 400).
+> back to Inter cleanly (headings just render in Inter 400).
 
 ---
 
@@ -459,8 +458,8 @@ Generated at build with `next/og` (`ImageResponse`), 1200×630, Node runtime,
 reading local font + image files. The design: dark brand gradient (left) with a
 **Nexa** headline + subhead, event photo (right) under a left-fade gradient, and a
 glassy "N people here now" pill top-right. Fonts are read from disk
-(`brand-kit/fonts/Nexa-Light.woff` as Nexa 400, `Montserrat-400.ttf` /
-`Montserrat-700.ttf`) and passed to `ImageResponse({ fonts: [...] })`.
+(`brand-kit/fonts/Nexa-Light.woff` as Nexa 400, `Inter-400.woff` /
+`Inter-700.woff`) and passed to `ImageResponse({ fonts: [...] })`.
 
 Key implementation notes:
 - File conventions: `app/opengraph-image.tsx` (+ `app/twitter-image.tsx` that
