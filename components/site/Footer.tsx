@@ -11,7 +11,7 @@ const PRODUCT = [
 const COMPANY = [
   { href: "/#organizers", label: "For organizers" },
   { href: "/#", label: "About" },
-  { href: "/#", label: "Privacy" },
+  { href: "/privacy", label: "Privacy" },
   { href: links.contact, label: "Contact" },
 ];
 
